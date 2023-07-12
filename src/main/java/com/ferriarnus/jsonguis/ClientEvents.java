@@ -6,8 +6,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ContainerScreenEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,6 +20,7 @@ import static com.ferriarnus.jsonguis.ClientConfig.CONTAINERNAMES;
 public class ClientEvents {
 
     private static MenuType<?> type;
+    public static BlockState lastBlock;
 
     @SubscribeEvent
     static void container(ContainerScreenEvent event) {
@@ -37,5 +40,10 @@ public class ClientEvents {
                 ClientEvents.type = type.getType();
             }
         }
+    }
+
+    @SubscribeEvent
+    static void blockinteract(PlayerInteractEvent event) {
+        lastBlock = event.getLevel().getBlockState(event.getPos());
     }
 }
