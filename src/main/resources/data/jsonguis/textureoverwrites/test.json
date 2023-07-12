@@ -1,0 +1,5 @@
+{
+  "menu": "minecraft:anvil",
+  "oldtexture": "minecraft:textures/gui/container/anvil.png",
+  "newtexture": "minecraft:textures/gui/container/generic_54.png"
+}

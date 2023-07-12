@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "package": "com.ferriarnus.jsonguis.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.jsonguis.refmap.json",
+  "mixins": [
+    "RenderSystemMixin"
+  ],
+  "minVersion": "0.8.4"
+}
